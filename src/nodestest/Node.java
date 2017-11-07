@@ -21,19 +21,8 @@ public class Node {
     public ArrayList<Node> nodeChildren;
 
     /**
-     *
-     * @param newNodeId
-     * @param newNodeName
-     * @param newNodeParent
+     * Sets all values to null
      */
-    public Node( String newNodeId, String newNodeName, Node newNodeParent)
-    {
-        nodeId = newNodeId;
-        nodeName = newNodeName;
-        nodeParent = newNodeParent;
-        nodeChildren = new ArrayList<>();
-    }
-
     public Node()
     {
         this.nodeId = null;
@@ -44,7 +33,7 @@ public class Node {
     }
 
     /**
-     *
+     * Sets the value of the root node by making sure it has no parent
      */
     public void setRoot()
     {
@@ -52,8 +41,8 @@ public class Node {
     }
 
     /**
-     *
-     * @return
+     * This methods returns the node IF of the object calling the method.
+     * @return Node ID of the object calling the method
      */
     public String getNodeId()
     {
@@ -61,8 +50,8 @@ public class Node {
     }
 
     /**
-     *
-     * @return
+     * This method returns the name of the node as a string
+     * @return A string with the name of the node
      */
     public String getNodeName()
     {
@@ -70,8 +59,8 @@ public class Node {
     }
 
     /**
-     *
-     * @return
+     * This methods returns the parent of the caller.
+     * @return A node object that is the parent
      */
     public Node getNodeParent()
     {
@@ -79,8 +68,8 @@ public class Node {
     }
 
     /**
-     *
-     * @param newNodeId
+     * This method sets the node ID of the object
+     * @param newNodeId The ID of the node as a string
      */
     public void setNodeId(String newNodeId)
     {
@@ -88,38 +77,51 @@ public class Node {
     }
 
     /**
-     *
-     * @param newNodeName
+     * This sets the name of the node.
+     * @param newNodeName The name of the node as a string.
      */
     public void setNodeName(String newNodeName)
     {
         this.nodeName = newNodeName;
     }
 
-    public void setParentString(String parentString)
-    {
-        this.parentString = parentString;
-    }
-
-    public String getParentString()
-    {
-        return parentString;
-    }
+//    /**
+//     * This method sets th
+//     * @param parentString 
+//     */
+//    public void setParentString(String parentString)
+//    {
+//        this.parentString = parentString;
+//    }
+//
+//    public String getParentString()
+//    {
+//        return parentString;
+//    }
 
     /**
-     *
-     * @param newNodeParent
+     * This method sets a reference to a parent node.
+     * @param newNodeParent The Node object that is the parent of the caller
      */        
     public void addParent(Node newNodeParent)
     {
         this.nodeParent = newNodeParent;
     }
 
+    /**
+     * This method adds a child the arrayList of children of the caller
+     * @param childNode The arrayList of children
+     */
     public void addChild(Node childNode)
     {
         this.nodeChildren.add(childNode);
     }
 
+    /**
+     * This method returns all of the children strings from the arrayList
+     * as a String. If a leaf node, returns a "leaf node" string.
+     * @return The node names of the children or a "leaf node" string
+     */
     public String getChildrenStrings()
     {
         String childrenList;
